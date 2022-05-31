@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+
+}
+
+.clock {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+}
+.clock::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.number {
+  --rotaion: 0;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotaion));
+  font-size: 1.3rem;
+}
+
+.number1 {
+  --rotaion: 30deg;
+}
+.number2 {
+  --rotaion: 60deg;
+}
+.number3 {
+  --rotaion: 90deg;
+}
+.number4 {
+  --rotaion: 120deg;
+}
+.number5 {
+  --rotaion: 150deg;
+}
+.number6 {
+  --rotaion: 180deg;
+}
+.number7 {
+  --rotaion: 210deg;
+}
+.number8 {
+  --rotaion: 240deg;
+}
+.number9 {
+  --rotaion: 270deg;
+}
+.number10 {
+  --rotaion: 300deg;
+}
+.number11 {
+  --rotaion: 330deg;
+}
+
+.clock .hand {
+    --rotaion: 0;
+
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid white;
+  transform: translatex(-50%) rotate(calc(var(--rotaion) * 1deg));
+}
+
+/*
+rotate()
+calc()
+var(--rotaion)* 1deg
+*/
+.hour {
+  width: 10px;
+  height: 44%;
+  background-color: black;
+}
+.minute {
+  width: 7px;
+  height: 37%;
+  background-color: black;
+}
+.sec {
+  width: 5px;
+  height: 29%;
+  background-color: red;
+}
+
+#p{
+
+color: white;
+margin-top: 50px;
+border: 3px solid red;
+border-radius: 20px;
+padding: 10px 40px;
+font-size: 30px;
+
+
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
